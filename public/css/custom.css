@@ -1,0 +1,26 @@
+button.btn-main {
+  /*background-color: #F46F80;*/
+  /* Control your width and height here! */
+  /*opacity: 0.7;*/
+  /*padding:0%;
+  padding-left:.5em;
+  border-radius: 0.2em;*/
+  /*border: 1px solid #C60098;*/
+  /*font-size: 3em;*/
+  box-sizing:border-box;
+}
+
+select.sl-main {
+  box-sizing:border-box;
+  /*padding:0%;
+  border-radius: 0.2em;*/
+}
+
+table.tbl-main {
+  
+  padding-left:5%;
+}
+
+div.div-main {
+  padding-left:2%;
+}

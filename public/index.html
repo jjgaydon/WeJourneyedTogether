@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>We Journeyed Together</title>
+    
+  </head>
+  <body>
+    <div>
+      <h1>We Journeyed Together</h1>
+    </div>
+    
+    <script src="/__/firebase/8.2.9/firebase-app.js"></script>
+    <script src="/__/firebase/8.2.9/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    
+    <script src="/__/firebase/init.js"></script>
+
+    <textarea id="taUsername" style="display:none"></textarea>
+    <div id="divStartMenu" class="div-main" >
+      <panel id="pnlLogIn" >
+        <input type="button" class="btn btn-info" id="btnSignIn" value="Sign in with Google" />
+      </panel>
+    </div>
+    <button id="btnTest" value="3" style="display:none">Boop</button>
+
+    <div id="divCreateCharacterMenu" class="div-main" style="display:none" >
+      <panel id="pnlCreateCharacter" >
+        <table>
+          <tr>
+            <td>
+              <label>Name: </label>
+            </td>
+            <td>
+              <textarea id="taGameMenuCreateCharName" class="form-control" placeholder="Character Name" ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Childhood Proficiency: </label>
+            </td>
+            <td>
+              <select id="slGameMenuCreateCharChildProfType" class="form-control"></select>
+              <!--<textarea id="taGameMenuMyCharChildProfVal" placeholder="Value"></textarea>-->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Career Proficiency: </label>
+            </td>
+            <td>
+              <select id="slGameMenuCreateCharCarProfType" class="form-control"></select>
+              <!--<textarea id="taGameMenuMyCharCarProfVal" placeholder="Value"></textarea>-->
+            </td>
+          </tr>
+        </table>
+        <table>
+              <tr>
+                <td>
+                  <label>Aspect Abilities</label>
+                  <table>
+                    <tr>
+                      <td>
+                        <label>Die</label>
+                      </td>
+                      <td>
+                        <label>Ability</label>
+                      </td>
+                      <td>
+                        <label>Aspect</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>1. </label>
+                      </td>
+                      <td>
+                        <label title="You have a -1 penalty to Aspect Checks for this Aspect during this Encounter." >Weakened Aspect</label>
+                      </td>
+                      <td>
+                        <select id="slGameMenuCreateCharAbil1Aspect" class="form-control" >
+                          <option>P&D</option>
+                          <option>A&C</option>
+                          <option>I&A</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>2. </label>
+                      </td>
+                      <td>
+                        <label title="You have a +1 bonus to Aspect Checks for this Aspect during this Encounter." >Empowered Aspect</label>
+                      </td>
+                      <td>
+                        <select id="slGameMenuCreateCharAbil2Aspect" class="form-control" >
+                          <option>P&D</option>
+                          <option>A&C</option>
+                          <option>I&A</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>3. </label>
+                      </td>
+                      <td>
+                        <label title="You have a +1 bonus to Aspect Checks for this Aspect during this Encounter." >Empowered Aspect</label>
+                      </td>
+                      <td>
+                        <select id="slGameMenuCreateCharAbil3Aspect" class="form-control" >
+                          <option>P&D</option>
+                          <option>A&C</option>
+                          <option>I&A</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>4. </label>
+                      </td>
+                      <td>
+                        <label title="You may change one Aspect use in your Action Hand to this Aspect." >Transmuted Aspect</label>
+                      </td>
+                      <td>
+                        <select id="slGameMenuCreateCharAbil4Aspect" class="form-control" >
+                          <option>P&D</option>
+                          <option>A&C</option>
+                          <option>I&A</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>5. </label>
+                      </td>
+                      <td>
+                        <label title="You gain one additional of the corresponding Aspect to your Action Hand." >Renewed Aspect</label>
+                      </td>
+                      <td>
+                        <select id="slGameMenuCreateCharAbil5Aspect" class="form-control" >
+                          <option>P&D</option>
+                          <option>A&C</option>
+                          <option>I&A</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>6. </label>
+                      </td>
+                      <td>
+                        <label title="You may reroll the die once this Encounter for an Aspect Check in this Aspect." >Resistant Aspect</label>
+                      </td>
+                      <td>
+                        <select id="slGameMenuCreateCharAbil6Aspect" class="form-control" >
+                          <option>P&D</option>
+                          <option>A&C</option>
+                          <option>I&A</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>7. </label>
+                      </td>
+                      <td>
+                        <label title="You may roll 1 extra d8 for this Action Hand." >Inspired Aspect</label>
+                      </td>
+                      <td>
+                        <select id="slGameMenuCreateCharAbil7Aspect" class="form-control" >
+                          <option>P&D</option>
+                          <option>A&C</option>
+                          <option>I&A</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>8. </label>
+                      </td>
+                      <td>
+                        <label title="You may gain an additional success for the same Aspect once this Encounter when making an Aspect Check for this Aspect." >Quickened Aspect</label>
+                      </td>
+                      <td>
+                        <select id="slGameMenuCreateCharAbil8Aspect" class="form-control" >
+                          <option>P&D</option>
+                          <option>A&C</option>
+                          <option>I&A</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td>
+                  <label>Deep Secret</label>
+                </td>
+                <td>
+                  <textarea id="taGameMenuCreateCharDeepSecret" class="form-control" ></textarea>
+                </td>
+              </tr>
+
+            </table> 
+            <table>
+              <tr>
+                <td>
+                  <button id="btnGameMenuCreateCharConfirm" class="btn btn-success">Create Character</button>
+                </td>
+                <td>
+                  <button id="btnGameMenuCreateCharCancel" class="btn btn-secondary">Cancel</button>
+                </td>
+              </tr>
+            </table>
+      </panel>
+    </div>
+
+    <div id="divGameMenu" class="div-main" style="display:none" >
+      
+      <input id="btnGameMenuExitGame" type="button" class="btn btn-secondary" value="Exit Game" />
+      <panel id="pnlGameMenuUpperHalf" >
+        <br />
+        <br />
+        <div id="divGameMenuStatus" >
+          <table>
+            <tr>
+              <td>
+                <label style="font-weight:bold">Nemesis: </label>
+              </td>
+              <td>
+                <label id="lblGameMenuStatusNemesis"></label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label style="font-weight:bold">Mistakes: </label>
+              </td>
+              <td>
+                <label id="lblGameMenuStatusMistakes"></label>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="divGameMenuJourneyMap">
+          <panel id="pnlGameMenuJourneyMap">
+            <br />
+            <h2>Journey Map</h2>
+
+            <div id="divGameMenuSelectTier">
+              <button id="btnGameMenuShowTier1" class="btn btn-secondary" >Tier 1 Locations</button>
+              <button id="btnGameMenuShowTier2" class="btn btn-secondary" style="display:none" >Tier 2 Locations</button>
+              <button id="btnGameMenuShowTier3" class="btn btn-secondary" style="display:none" >Tier 3 Locations</button>
+              <button id="btnGameMenuShowFinalConfrontation" class="btn btn-secondary" style="display:none">Final Confrontation</button>
+            </div>
+            <button id="btnGameMenuHideTier" class="btn btn-secondary" style="display:none">Return</button> 
+            <table id="tblGameMenuChoosePlayer" style="display:none">
+              <tr>
+                <td>
+                  <label>Main Player: </label>
+                </td>
+                <td>
+                  <select id="slGameMenuChoosePlayer" class="form-control" ></select>
+                </td>
+              </tr>
+            </table>
+            <div id="divGameMenuTier1" style="display:none">
+              
+              <label style="font-weight:bold">Tier 1</label>
+              <table>
+                <tr>
+                  <td id="tdT1L1">
+                    <div id="divT1L1Choose" style="display:block">
+                      <label>Select Next Location</label>
+                      <button id="btnT1L1O1" class="btn btn-success"></button>
+                      <button id="btnT1L1O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT1L1" style="display:none">
+                      <label>Location 1</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L1Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L1Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L1Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT1L2" styel="display:none">
+                    <div id="divT1L2Choose" style="display:block">
+                      <label>Select Next Location</label>
+                      <button id="btnT1L2O1" class="btn btn-success"></button>
+                      <button id="btnT1L2O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT1L2" style="display:none">
+                      <label>Location 2</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L2Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L2Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L2Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT1L3" style="display:none">
+                    <div id="divT1L3Choose" style="display:block">
+                      <label>Select Next Location</label>
+                      <button id="btnT1L3O1" class="btn btn-success"></button>
+                      <button id="btnT1L3O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT1L3" style="display:none">
+                      <label>Location 3</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L3Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L3Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L3Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT1L4" style="display:none">
+                    <div id="divT1L4Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT1L4O1" class="btn btn-success"></button>
+                      <button id="btnT1L4O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT1L4" style="display:none">
+                      <label>Location 4</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L4Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L4Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L4Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT1L5" style="display:none">
+                    <div id="divT1L5Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT1L5O1" class="btn btn-success"></button>
+                      <button id="btnT1L5O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT1L5" style="display:none">
+                      <label>Location 5</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L5Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L5Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT1L5Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="divGameMenuTier2" style="display:none">
+              <label style="font-weight:bold">Tier 2</label>
+              <table>
+                <tr>
+                  <td id="tdT2L1">
+                    <div id="divT2L1Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT2L1O1" class="btn btn-success"></button>
+                      <button id="btnT2L1O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT2L1" style="display:none">
+                      <label>Location 1</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L1Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L1Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L1Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT2L2" styel="display:none">
+                    <div id="divT2L2Choose" style="display:block">
+                      <label>Select Next Location</label>
+                      <button id="btnT2L2O1" class="btn btn-success"></button>
+                      <button id="btnT2L2O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT2L2" style="display:none">
+                      <label>Location 2</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L2Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L2Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L2Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT2L3" style="display:none">
+                    <div id="divT2L3Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT2L3O1" class="btn btn-success"></button>
+                      <button id="btnT2L3O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT2L3" style="display:none">
+                      <label>Location 3</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L3Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L3Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L3Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT2L4" style="display:none">
+                    <div id="divT2L4Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT2L4O1" class="btn btn-success"></button>
+                      <button id="btnT2L4O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT2L4" style="display:none">
+                      <label>Location 4</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L4Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L4Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L4Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT2L5" style="display:none">
+                    <div id="divT2L5Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT2L5O1" class="btn btn-success"></button>
+                      <button id="btnT2L5O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT2L5" style="display:none">
+                      <label>Location 5</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L5Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L5Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT2L5Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="divGameMenuTier3" style="display:none">
+              <label style="font-weight:bold">Tier 3</label>
+              <table>
+                <tr>
+                  <td id="tdT3L1">
+                    <div id="divT3L1Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT3L1O1" class="btn btn-success"></button>
+                      <button id="btnT3L1O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT3L1" style="display:none">
+                      <label>Location 1</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L1Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L1Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L1Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT3L2" styel="display:none">
+                    <div id="divT3L2Choose" style="display:block">
+                      <label>Select Next Location</label>
+                      <button id="btnT3L2O1" class="btn btn-success"></button>
+                      <button id="btnT3L2O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT3L2" style="display:none">
+                      <label>Location 2</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L2Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L2Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L2Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT3L3" style="display:none">
+                    <div id="divT3L3Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT3L3O1" class="btn btn-success"></button>
+                      <button id="btnT3L3O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT3L3" style="display:none">
+                      <label>Location 3</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L3Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L3Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L3Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT3L4" style="display:none">
+                    <div id="divT3L4Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT3L4O1" class="btn btn-success"></button>
+                      <button id="btnT3L4O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT3L4" style="display:none">
+                      <label>Location 4</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L4Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L4Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L4Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td id="tdT3L5" style="display:none">
+                    <div id="divT3L5Choose" >
+                      <label>Select Next Location</label>
+                      <button id="btnT3L5O1" class="btn btn-success"></button>
+                      <button id="btnT3L5O2" class="btn btn-success"></button>
+                    </div>
+                    <div id="divT3L5" style="display:none">
+                      <label>Location 5</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L5Type"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L5Choice"></label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label id="lblGameMenuT3L5Player"></label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="divGameMenuFinalConfrontation" style="display:none" >
+              <label id="lblGameMenuNemesisName" style="font-weight:bold"></label>
+              <table>
+                <tr>
+                  <td>
+                    <label>Mistakes: </label>
+                  </td>
+                  <td>
+                    <label id="lblGameMenuNemesisMistakes"></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Health: </label>
+                  </td>
+                  <td>
+                    <label id="lblGameMenuNemesisHealth"></label>
+                  </td>
+                  <td>
+                    <button class="btn btn-info" id="btnGameMenuNemesisHealthDec">Decrease</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-info" id="btnGameMenuNemesisHealthInc">Increase</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </panel>
+        </div>
+      </panel>
+      <br />
+      <panel id="pnlGameMenuLowerHalf" >
+        <div id="divEncounterSheet" style="display:none" >
+          <table>
+            <tr>
+              <td>
+                <label style="font-size:x-large;font-weight:bold;" id="lblGameMenuEncounterSheetName"></label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label id="lblGameMenuEncounterSheetDesc"></label>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label id="lblGameMenuEncounterSheetNumSuccess"></label>
+              </td>
+              <td>
+                <input type="button" class="btn btn-secondary" id="btnGameMenuEncounterSheetIncSuccess" value="+" />
+              </td>
+              <td>
+                <input type="button" class="btn btn-secondary" id="btnGameMenuEncounterSheetDecSuccess" value="-" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label style="font-weight:bold">Challenge Levels</label>
+                <table>
+                  <tr>
+                    <td>
+                      <label>P&D</label>
+                    </td>
+                    <td>
+                      <label>A&C</label>
+                    </td>
+                    <td>
+                      <label>I&A</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label id="lblGameMenuEncounterSheetChallengePD"></label>
+                    </td>
+                    <td>
+                      <label id="lblGameMenuEncounterSheetChallengeAC"></label>
+                    </td>
+                    <td>
+                      <label id="lblGameMenuEncounterSheetChallengeIA"></label>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label style="font-weight:bold">Reward Combinations</label>
+                <table>
+                  <tr>
+                    <td>
+                      <label>P&D</label>
+                    </td>
+                    <td>
+                      <label>A&C</label>
+                    </td>
+                    <td>
+                      <label>I&A</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label id="lblGameMenuEncounterSheetRewardPD"></label>
+                    </td>
+                    <td>
+                      <label id="lblGameMenuEncounterSheetRewardAC"></label>
+                    </td>
+                    <td>
+                      <label id="lblGameMenuEncounterSheetRewardIA"></label>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Reward Value: </label>
+              </td>
+              <td>
+                <label id="lblGameMenuEncounterSheetRewardValue"></label>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <table>
+            <tr>
+              <td>
+                <select id="slGameMenuEncounterSheetPlayers" class="form-control" ></select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <input id="btnGameMenuEncounterSheetSuccess" type="button" class="btn btn-success" value="Success" />
+                    </td>
+                    <td>
+                      <input id="btnGameMenuEncounterSheetFailure" type="button" class="btn btn-danger" value="Failure" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <div id="divScenePage" style="display:none">
+          <table>
+            <tr>
+              <td>
+                <h3>Post-Encounter Scene</h3>
+                <p>The Main Player of the Encounter rolls an Aspect Hand. They then resolve a Scene based on the options available:</p>
+
+                <p>    •	Relax or Reflect (2 of that Aspect): Choose another Traveler to converse with over down time. Roleplay how this transpires. You gain an Experience Point.</p>
+
+                <p>    •	Train Another (3 of that Aspect): Choose another Traveler and offer to help train them in this Aspect. Roleplay how this transpires. They gain +1 Maturity in this Aspect.</p>
+
+                <p>    •	Train Self (4 of that Aspect): Choose another Traveler to provide guidance or aid in your Traveler training in this Aspect. Roleplay how this transpires. You gain +1 Maturity in this Aspect.</p>
+
+                <p>    •	Heal Another (3 of that Aspect): Choose another Traveler and attempt to help them deal with a Wound in this Aspect. Roleplay how this transpires. They may Resolve the Wound.</p>
+
+                <p>    •	Heal Self (4 of that Aspect): Choose another Traveler and attempt to ask for their help in dealing with a Wound in this Aspect. Roleplay how this transpires. You may Resolve the Wound.</p>
+
+                <p>At the end of a Scene, any player may spend 4 Experience Points to resolve a Wound. Then, increase all Wounds.</p>
+                  
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="button" class="btn btn-info" id="btnGameMenuScenePageContinue" value="Continue" />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <br />
+        <br />
+        <div id="divGameMenuCharSheets">
+          <panel id="pnlGameMenuMyCharSheet" >
+            <h2>Character Sheet</h2>
+            <table>
+              <tr>
+                <td>
+                  <label>Name: </label>
+                </td>
+                <td>
+                  <textarea id="taGameMenuMyCharName" class="form-control" placeholder="Character Name" ></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Experience: </label>
+                </td>
+                <td>
+                  <input id="nbxGameMenuMyCharExperience" class="form-control" type="number" min=0 value=0 ></input>
+                  <!--<textarea id="taGameMenuMyCharExperience" placeholder="Experience Points"></textarea>-->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharExhausted">Exhausted</input>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Childhood Proficiency: </label>
+                </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <select id="slGameMenuMyCharChildProfType" class="form-control" style="display:none"></select>
+                        <label id="lblGameMenuMyCharChildProfVal"></label>
+                      </td>
+                      <td>
+                        <input type="number" class="form-control" min=1 value=1 id="nbxGameMenuMyCharChildProfVal"></input>
+                      </td>
+                    </tr>
+                  </table>
+                  
+                  <!--<textarea id="taGameMenuMyCharChildProfVal" placeholder="Value"></textarea>-->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Career Proficiency: </label>
+                </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <select id="slGameMenuMyCharCarProfType" class="form-control" style="display:none"></select>
+                        <label id="lblGameMenuMyCharCarProfVal"></label>
+                      </td>
+                      <td>
+                        <input type="number" class="form-control" min=1 value=1 id="nbxGameMenuMyCharCarProfVal"></input>
+                      </td>
+                    </tr>
+
+                  </table>
+                  
+                  <!--<textarea id="taGameMenuMyCharCarProfVal" placeholder="Value"></textarea>-->
+                </td>
+              </tr>
+            </table>
+
+            <div class="row">
+              <div class="col-5" >
+                <table>
+                  <tr>
+                    <td>
+                      <label>Aspect Abilities</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label>Die</label>
+                          </td>
+                          <td>
+                            <label>Ability</label>
+                          </td>
+                          <td>
+                            <label>Aspect</label>
+                          </td>
+                          <td>
+                            <label>Active</label>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>1. </label>
+                          </td>
+                          <td>
+                            <label title="You have a -1 penalty to Aspect Checks for this Aspect during this Encounter." >Weakened Aspect</label>
+                          </td>
+                          <td>
+                            <label id="lblGameMenuMyCharAbil1Aspect"></label>
+                            <select id="slGameMenuMyCharAbil1Aspect" style="display:none" >
+                              <option>P&D</option>
+                              <option>A&C</option>
+                              <option>I&A</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharAbil1Active" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>2. </label>
+                          </td>
+                          <td>
+                            <label title="You have a +1 bonus to Aspect Checks for this Aspect during this Encounter." >Empowered Aspect</label>
+                          </td>
+                          <td>
+                            <label id="lblGameMenuMyCharAbil2Aspect"></label>
+                            <select id="slGameMenuMyCharAbil2Aspect" style="display:none" >
+                              <option>P&D</option>
+                              <option>A&C</option>
+                              <option>I&A</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharAbil2Active" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>3. </label>
+                          </td>
+                          <td>
+                            <label title="You have a +1 bonus to Aspect Checks for this Aspect during this Encounter." >Empowered Aspect</label>
+                          </td>
+                          <td>
+                            <label id="lblGameMenuMyCharAbil3Aspect"></label>
+                            <select id="slGameMenuMyCharAbil3Aspect" style="display:none" >
+                              <option>P&D</option>
+                              <option>A&C</option>
+                              <option>I&A</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharAbil3Active" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>4. </label>
+                          </td>
+                          <td>
+                            <label title="You may change one Aspect use in your Action Hand to this Aspect." >Transmuted Aspect</label>
+                          </td>
+                          <td>
+                            <label id="lblGameMenuMyCharAbil4Aspect"></label>
+                            <select id="slGameMenuMyCharAbil4Aspect" style="display:none" >
+                              <option>P&D</option>
+                              <option>A&C</option>
+                              <option>I&A</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharAbil4Active" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>5. </label>
+                          </td>
+                          <td>
+                            <label title="You gain one additional of the corresponding Aspect to your Action Hand." >Renewed Aspect</label>
+                          </td>
+                          <td>
+                            <label id="lblGameMenuMyCharAbil5Aspect"></label>
+                            <select id="slGameMenuMyCharAbil5Aspect" style="display:none" >
+                              <option>P&D</option>
+                              <option>A&C</option>
+                              <option>I&A</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharAbil5Active" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>6. </label>
+                          </td>
+                          <td>
+                            <label title="You may reroll the die once this Encounter for an Aspect Check in this Aspect." >Resistant Aspect</label>
+                          </td>
+                          <td>
+                            <label id="lblGameMenuMyCharAbil6Aspect"></label>
+                            <select id="slGameMenuMyCharAbil6Aspect" style="display:none" >
+                              <option>P&D</option>
+                              <option>A&C</option>
+                              <option>I&A</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharAbil6Active" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>7. </label>
+                          </td>
+                          <td>
+                            <label title="You may roll 1 extra d8 for this Action Hand." >Inspired Aspect</label>
+                          </td>
+                          <td>
+                            <label id="lblGameMenuMyCharAbil7Aspect"></label>
+                            <select id="slGameMenuMyCharAbil7Aspect" style="display:none" >
+                              <option>P&D</option>
+                              <option>A&C</option>
+                              <option>I&A</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharAbil7Active" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>8. </label>
+                          </td>
+                          <td>
+                            <label title="You may gain an additional success for the same Aspect once this Encounter when making an Aspect Check for this Aspect." >Quickened Aspect</label>
+                          </td>
+                          <td>
+                            <label id="lblGameMenuMyCharAbil8Aspect"></label>
+                            <select id="slGameMenuMyCharAbil8Aspect" style="display:none" >
+                              <option>P&D</option>
+                              <option>A&C</option>
+                              <option>I&A</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="checkbox" class="form-check-input" id="cbxGameMenuMyCharAbil8Active" />
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td>
+                      <label>Aspect Maturity</label>
+                      <table>
+                        <tr>
+                          <td>
+                            <label>P&D</label>
+                          </td>
+                          <td>
+                            <!--<textarea id="taGameMenuMyCharMaturityPD" placeholder="#" ></textarea>-->
+                            <input id="nbxGameMenuMyCharMaturityPD" class="form-control" type="number" min=1 value=1></input>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>A&C</label>
+                          </td>
+                          <td>
+                            <input id="nbxGameMenuMyCharMaturityAC" class="form-control" type="number" min=1 value=1></input>
+                            <!--<textarea id="taGameMenuMyCharMaturityAC" placeholder="#" ></textarea>-->
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label>I&A</label>
+                          </td>
+                          <td>
+                            <input id="nbxGameMenuMyCharMaturityIA" class="form-control" type="number" min=1 value=1></input>
+                            <!--<textarea id="taGameMenuMyCharMaturityIA" placeholder="#" ></textarea>-->
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col">
+                <label style="font-weight:bold">The Dice Zone</label>
+                <table>
+                  <tr>
+                    <td>
+                      <table>
+                        <tr>
+                          <td>
+                            <label>Roll d8</label>
+                          </td>
+                          <td>
+                            <input type="number" class="form-control" min=1 max=8 value=1 id="nbxGameMenuDiceRollManual"></input>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-info" id="btnGameMenuDiceRollManual" >Roll Manually</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-info" id="btnGameMenuDiceRoll" >Roll 1d8</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <br />
+                          </td>
+                          <td>
+                            <br />
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-info" id="btnGameMenuActionHandRoll" >Roll Action Hand</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-danger" id="btnGameMenuClearDice" >Clear Hand</button>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td>
+                      <!-- CHANGE IMAGES TO WHITE TEXT-->
+                      <img id="imgDieResult1" src="images/d81.png" style="display:none" >
+                      <img id="imgDieResult2" src="images/d82.png" style="display:none" >
+                      <img id="imgDieResult3" src="images/d83.png" style="display:none" >
+                      <img id="imgDieResult4" src="images/d84.png" style="display:none" >
+                      <img id="imgDieResult5" src="images/d85.png" style="display:none" >
+                      <img id="imgDieResult6" src="images/d86.png" style="display:none" >
+                      <img id="imgDieResult7" src="images/d87.png" style="display:none" >
+                      <img id="imgDieResult8" src="images/d88.png" style="display:none" >
+                    </td>
+                  </tr>
+                </table>
+                <table id="tblDieResults">
+                              
+                </table>
+                
+              </div>
+            </div>
+            
+            
+            
+            <table>
+              <tr>
+                <td>
+                  <label>P&D Wounds</label>
+                </td>
+                <td>
+                  <label>A&C Wounds</label>
+                </td>
+                <td>
+                  <label>I&A Wounds</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundPD1" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundPD1" class="form-control" min=0 max=4 value=0></input>
+                        <!--<select id="slGameMenuMyCharWoundPD1" >
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>-->
+                        </select>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundAC1" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundAC1" class="form-control" min=0 max=4 value=0></input>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundIA1" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundIA1" class="form-control" min=0 max=4 value=0></input>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundPD2" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundPD2" class="form-control" min=0 max=4 value=0></input>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundAC2" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundAC2" class="form-control" min=0 max=4 value=0></input>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundIA2" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundIA2" class="form-control" min=0 max=4 value=0></input>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundPD3" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundPD3" class="form-control" min=0 max=4 value=0></input>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundAC3" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundAC3" class="form-control" min=0 max=4 value=0></input>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea id="taGameMenuMyCharWoundIA3" class="form-control" placeholder="Wound Description"></textarea>
+                      </td>
+                      <td>
+                        <input type="number" id="nbxGameMenuMyCharWoundIA3" class="form-control" min=0 max=4 value=0></input>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table> 
+            <table>
+              <tr>
+                <td>
+                  <label>Deep Secret</label>
+                </td>
+                <td>
+                  <textarea id="taGameMenuMyCharDeepSecret" class="form-control" ></textarea>
+                </td>
+                <td>
+                  <br>
+                </td>
+                <td>
+                  <input type="button" id="btnGameMenuMyCharSave" class="form-control" value="Save Changes" ></button>
+                </td>
+              </tr>
+
+            </table> 
+          </panel>
+          
+        </div>
+      </panel>
+    </div>
+
+    <div id="divMainMenu" class="div-main" style="display:none" >
+      
+      <div class="row">
+        <div class="one column">
+          <button id="btnMainMenuSignOut" class="btn btn-warning" >Sign Out</button>
+        </div>
+      </div>
+      <panel id="pnlHostedGames" >
+        <h1>My Hosted Games</h1>
+        <table class="tbl-main">
+          <tr>
+            <td>
+              <select id="slGameList" class="form-control" ></select>
+            </td>
+            <td>
+              <button id="btnJoinHostedGame" type="button" class="btn btn-success"  >Join Game</button>
+            </td>
+            <td>
+              <button id="btnDeleteHostedGame" class="btn btn-danger" >Delete Game</button>
+            </td>
+          </tr>
+        </table>        
+
+        <button id="btnCreateGame" type="button" class="btn btn-info" >Create New Game</button>
+  
+      </panel>
+
+      <panel id="pnlConfirmDeleteHostedGame" style="display:none" >
+        <h1>Confirm Delete</h1>
+        <label>Are you sure you want to delete this game?</label>
+        <br>
+        <label id="lblGameToDeleteDisplay" style="font-style:italic"></label>
+        <button id="btnConfirmDeleteGame" type="button" class="btn btn-danger" >Delete</button>
+        <button id="btnCancelDeleteGame" type="button" class="btn btn-secondary" >Cancel</button>
+      </panel>
+      
+      <panel>
+        <h1>My Other Games</h1>
+        <table>
+          <tr>
+            <td>
+              <textarea id="taJoinedGamesName" class="form-control" placeholder="Game Name"></textarea>
+            </td>
+            <td>
+              <button id="btnJoinGamesJoinGame" type="button" class="btn btn-success">Join Game</button>
+            </td>
+          </tr>
+        </table>
+
+        
+      </panel>
+      
+      
+      
+
+    </div>
+
+    <div id="divCreateGameMenu" class="div-main" style="display:none" >
+      <panel id="pnlCreateGame1" >
+        <table>
+          <tr>
+            <td>
+              <label>Game Name: </label>
+              
+            </td>
+            <td>
+              <textarea id="taNewGameName" class="form-control"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Number of Players:</label>
+            </td>
+            <td>
+              <select id="slNewGameNumPlayers" class="form-control">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Module:</label>
+            </td>
+            <td>
+              <select id="slCreateGameModules" class="form-control"></select>
+            </td>
+          </tr>
+        </table>
+
+        <button id="btnCreateGame1Next" class="btn btn-info" >Next</button>
+      </panel>
+      <panel id="pnlCreateGame2" style="display:none" >
+        <table id="tblCreateGamePlayer1">
+          <tr>
+            <td>
+              <label>Player 1:</label>
+            </td>
+            <td>
+              <label id="lblCreateGamePlayer1"></label>
+            </td>
+          </tr>
+        </table>
+        <table id="tblCreateGamePlayer2">
+          <tr>
+            <td>
+              <label>Player 2:</label>
+            </td>
+            <td>
+              <textarea id="taCreateGamePlayer2" class="form-control"></textarea>
+            </td>
+          </tr>
+        </table>
+        <table id="tblCreateGamePlayer3" style="display:none">
+          <tr>
+            <td>
+              <label>Player 3:</label>
+            </td>
+            <td>
+              <textarea id="taCreateGamePlayer3" class="form-control"></textarea>
+            </td>
+          </tr>
+        </table>
+        <table id="tblCreateGamePlayer4" style="display:none">
+          <tr>
+            <td>
+              <label>Player 4:</label>
+            </td>
+            <td>
+              <textarea id="taCreateGamePlayer4" class="form-control"></textarea>
+            </td>
+          </tr>
+        </table>
+        <table id="tblCreateGamePlayer5" style="display:none">
+          <tr>
+            <td>
+              <label>Player 5:</label>
+            </td>
+            <td>
+              <textarea id="taCreateGamePlayer5" class="form-control"></textarea>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <label>Nemesis: </label>
+            </td>
+            <td>
+              <textarea id="taCreateGameNemesisName" class="form-control" placeholder="Name"></textarea>
+              <textarea id="taCreateGameNemesisDesc" class="form-control" placeholder="Description"></textarea>
+            </td>
+          </tr>
+        </table>
+        <button id="btnCreateGameSubmit" class="btn btn-success" >Create Game</button>
+      </panel>
+      <button id="btnCreateGameCancel" class="btn btn-secondary" >Cancel</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

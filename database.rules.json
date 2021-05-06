@@ -1,0 +1,51 @@
+{
+  "rules": {
+    "modules":{
+    ".read": true,
+    ".write": "auth != null && auth.token.email == 'wejourneyedtogether@gmail.com'"
+    },
+    "users": {
+		".read": false,
+		".write": false,
+		"$user": {
+			".read": "auth != null && $user == auth.uid",
+			".write": "auth != null && $user == auth.uid"
+		}
+    },
+    "games": {
+		".read": false,
+		".write": false,
+		"$game": {
+			"unused": {
+				".read": true,
+				".write": false
+			},
+			".read": "auth != null && (data.child('player1').val() == auth.token.email || data.child('player2').val() == auth.token.email || data.child('player3').val() == auth.token.email || data.child('player4').val() == auth.token.email || data.child('player5').val() == auth.token.email)",
+			".write": "auth != null && (data.child('player1').val() == auth.token.email || !data.hasChild('player1') || data.child('unused').val() == true)",
+			"player1char": {
+				".read": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player2').val())",
+				".write": "auth != null && (auth.token.email == data.parent().child('player1').val())"
+			},
+			"player2char": {
+				".read": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player2').val())",
+				".write": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player2').val())"
+			},
+			"player3char": {
+				".read": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player3').val())",
+				".write": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player3').val())"
+			},
+			"player4char": {
+				".read": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player4').val())",
+				".write": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player4').val())"
+			},
+			"player5char": {
+				".read": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player5').val())",
+				".write": "auth != null && (auth.token.email == data.parent().child('player1').val() || auth.token.email == data.parent().child('player5').val())"
+			}
+		}
+    },
+    ".read": false,
+    ".write": false
+  }
+  
+}

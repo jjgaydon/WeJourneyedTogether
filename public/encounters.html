@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>We Journeyed Together</title>
+    
+  </head>
+  <body>
+    <div>
+      <h1>WJT - Encounter Editor</h1>
+    </div>
+    
+    <script src="/__/firebase/8.2.9/firebase-app.js"></script>
+    <script src="/__/firebase/8.2.9/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    
+    <script src="/__/firebase/init.js"></script>
+
+    <div id="divStartMenu" class="div-main" >
+      <panel id="pnlLogIn" >
+        <input type="button" class="btn btn-info" id="btnSignIn" value="Sign in with Google" />
+      </panel>
+    </div>
+
+    <div id="divMainMenu" class="div-main" style="display:none" >
+      <panel>
+        <input type="button" class="btn btn-secondary" id="btnSignOut" value="Sign Out" />
+        <br />
+        <textarea class="form-control" id="taMainMenuModuleName" placeholder="Module Name"></textarea>
+        <input type="button" class="btn btn-info" id="btnLoadModule" value="Load Module"/>
+      </panel>
+    </div>
+
+    <div id="divModuleMenu" class="div-main" style="display:none">
+      <panel>
+        <input type="button" class="btn btn-info" id="btnExitModule" value="Exit Module" />
+        <br />
+        <input type="button" class="btn btn-info" id="btnAddEncounter" value="New Encounter" />
+        <br />
+        <label id="lblModuleName"></label>
+        <label id="lblModuleBiomes"></label>
+        <label id="lblModuleThemes"></label>
+        <table id="tblEncounterList">
+          <tr>
+            <td>
+              <label>ID</label>
+            </td>
+            <td>
+              <label>Biome</label>
+            </td>
+            <td>
+              <label>Theme</label>
+            </td>
+            <td>
+              <label>Name</label>
+            </td>
+            <td>
+              <label>Success Count</label>
+            </td>
+            <td>
+              <label>ChallengePD</label>
+            </td>
+            <td>
+              <label>ChallengeAC</label>
+            </td>
+            <td>
+              <label>ChallengeIA</label>
+            </td>
+            <td>
+              <label>RewardPD</label>
+            </td>
+            <td>
+              <label>RewardAC</label>
+            </td>
+            <td>
+              <label>RewardIA</label>
+            </td>
+            <td>
+              <label>Reward</label>
+            </td>
+            <td>
+              <label>Desc</label>
+            </td>
+          </tr>
+        </table>
+      </panel>
+    </div>
+
+    <div id="divCreateEncounterMenu" class="div-main" style="display:none">
+      <panel>
+        <input type="button" class="btn btn-secondary" id="btnExitCreate" value="Cancel" />
+        <br />
+        <table>
+          <tr>
+            <td>
+              <label>ID</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterID" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Biome</label>
+            </td>
+            <td>
+              <textarea class="form-control" id="taNewEncounterBiome" placeholder="Biome"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Theme</label>
+            </td>
+            <td>
+              <textarea class="form-control" id="taNewEncounterTheme" placeholder="Theme">none</textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Name</label>
+            </td>
+            <td>
+              <textarea class="form-control" id="taNewEncounterName" placeholder="Name"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Success Count</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterSuccessCount" value="2" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Challenge Level P&D</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterCLPD" value="2" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Challenge Level A&C</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterCLAC" value="2" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Challenge Level I&A</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterCLIA" value="2" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Reward P&D</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterRewardPD" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Reward A&C</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterRewardAC" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Reward I&A</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterRewardIA" value="0" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Reward</label>
+            </td>
+            <td>
+              <input type="number" class="form-control" id="nbxNewEncounterReward" value="1" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Description</label>
+            </td>
+            <td>
+              <textarea class="form-control" id="taNewEncounterDesc" placeholder="Description"></textarea>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <input type="button" class="btn btn-info" id="btnNewEncounterSubmit" value="Submit" />
+            </td>
+            <td>
+              <input type="button" class="btn btn-warning" id="btnNewEncounterCancel" value="Cancel" />
+            </td>
+          </tr>
+        </table>
+      </panel>
+    </div>
+
+    <script src="encounters.js"></script>
+  </body>
+</html>

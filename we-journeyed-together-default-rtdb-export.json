@@ -1,0 +1,937 @@
+{
+  "games" : {
+  },
+  "modules" : {
+    "Fantasy" : {
+      "biomes" : {
+        "biome1" : "Forest",
+        "biome2" : "Plain",
+        "biome3" : "Swamp",
+        "biome4" : "Mountain",
+        "biome5" : "Desert"
+      },
+      "encounters" : {
+        "biome1" : {
+          "theme0" : {
+            "id1" : {
+              "challengeLevelAC" : "3",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "5",
+              "desc" : "A dangerous beast of the forest attacks!",
+              "name" : "Beast Attack",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "1",
+              "rewardPD" : "3",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "3",
+              "desc" : "Armed people who mean you know good will demand your belongings!",
+              "name" : "Bandits",
+              "reward" : "1",
+              "rewardAC" : "1",
+              "rewardIA" : "0",
+              "rewardPD" : "3",
+              "successCount" : "4"
+            },
+            "id3" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "3",
+              "challengeLevelPD" : "8",
+              "desc" : "A natural force that threatens your party",
+              "name" : "Natural Hazard",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id4" : {
+              "challengeLevelAC" : "7",
+              "challengeLevelIA" : "3",
+              "challengeLevelPD" : "4",
+              "desc" : "An injured person who could use your help... What hurt them?",
+              "name" : "Injured Stranger",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "2",
+              "rewardPD" : "1",
+              "successCount" : "3"
+            }
+          },
+          "theme1" : {
+            "id1" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "4",
+              "desc" : "A lively creature of this forest attacks! ",
+              "name" : "Beast Attack",
+              "reward" : "2",
+              "rewardAC" : "2",
+              "rewardIA" : "0",
+              "rewardPD" : "2",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "3",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "8",
+              "desc" : "The dangerous wildlife of this forest make for an even more dangerous disaster",
+              "name" : "Natural Hazard",
+              "reward" : "2",
+              "rewardAC" : "1",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme2" : {
+            "id1" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "7",
+              "desc" : "This creature looks as though it has had very little to eat as it desperately tries to end you...",
+              "name" : "Beast Attack",
+              "reward" : "3",
+              "rewardAC" : "4",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "3",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "5",
+              "desc" : "These bandits look like they'll do anything to take something they could sell for a meal",
+              "name" : "Bandits",
+              "reward" : "3",
+              "rewardAC" : "2",
+              "rewardIA" : "0",
+              "rewardPD" : "2",
+              "successCount" : "4"
+            }
+          },
+          "theme3" : {
+            "id1" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "3",
+              "desc" : "These bandits know how to navigate the streets of this place",
+              "name" : "Bandits",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "1",
+              "rewardPD" : "3",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "3",
+              "challengeLevelPD" : "5",
+              "desc" : "What kind of dangers could injure someone in a place such as this?",
+              "name" : "Injured Stranger",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "2",
+              "rewardPD" : "2",
+              "successCount" : "4"
+            }
+          },
+          "theme4" : {
+            "id1" : {
+              "challengeLevelAC" : "3",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "4",
+              "desc" : "The very creatures themselves seem augmented by the natural blessing of this forest",
+              "name" : "Beast Attack",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "2",
+              "rewardPD" : "3",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "3",
+              "challengeLevelPD" : "7",
+              "desc" : "With patience and understanding, the forest's natural blessings could aid you",
+              "name" : "Natural Hazard",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "4",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme5" : {
+            "id1" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "6",
+              "desc" : "A creature with corrupted flesh springs towards you, snarling in its infected rage",
+              "name" : "Beast Attack",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "4",
+              "rewardPD" : "1",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "7",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "6",
+              "desc" : "This person has been affected by the terrible corruption of this place...",
+              "name" : "Injured Stranger",
+              "reward" : "4",
+              "rewardAC" : "2",
+              "rewardIA" : "2",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          }
+        },
+        "biome2" : {
+          "theme0" : {
+            "id1" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "4",
+              "desc" : "A battle rages in these plains, how will you get past without getting caught in the crossfire?",
+              "name" : "Heated Battle",
+              "reward" : "1",
+              "rewardAC" : "1",
+              "rewardIA" : "0",
+              "rewardPD" : "3",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "7",
+              "challengeLevelIA" : "2",
+              "challengeLevelPD" : "7",
+              "desc" : "Will this food be safe?",
+              "name" : "Strange Food",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id3" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "5",
+              "desc" : "Can you afford your supplies?",
+              "name" : "Traveling Merchant",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "1",
+              "rewardPD" : "3",
+              "successCount" : "4"
+            },
+            "id4" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "8",
+              "desc" : "A force of nature impedes upon your journey",
+              "name" : "Natural Hazard",
+              "reward" : "1",
+              "rewardAC" : "1",
+              "rewardIA" : "2",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            }
+          },
+          "theme1" : {
+            "id1" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "3",
+              "challengeLevelPD" : "4",
+              "desc" : "This food seems like it could be poisonous, given the lush environment",
+              "name" : "Strange Food",
+              "reward" : "2",
+              "rewardAC" : "0",
+              "rewardIA" : "5",
+              "rewardPD" : "0",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "7",
+              "desc" : "The natural hazards of this place are made harsher given the lush environment",
+              "name" : "Natural Hazard",
+              "reward" : "2",
+              "rewardAC" : "1",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme2" : {
+            "id1" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "6",
+              "desc" : "These people are battling out of desperation...",
+              "name" : "Heated Battle",
+              "reward" : "3",
+              "rewardAC" : "4",
+              "rewardIA" : "1",
+              "rewardPD" : "0",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "7",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "5",
+              "desc" : "It is difficult to find food in this place... is this a trap?",
+              "name" : "Strange Food",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "2",
+              "rewardPD" : "2",
+              "successCount" : "4"
+            }
+          },
+          "theme3" : {
+            "id1" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "3",
+              "desc" : "How good is your haggling?",
+              "name" : "Traveling Merchant",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "0",
+              "rewardPD" : "4",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "7",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "6",
+              "desc" : "Even the civilization will be affected by this disaster",
+              "name" : "Natural Hazard",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "3",
+              "rewardPD" : "1",
+              "successCount" : "4"
+            }
+          },
+          "theme4" : {
+            "id1" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "8",
+              "desc" : "This food has strange properties... can your body handle its strange power?",
+              "name" : "Strange Food",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "2",
+              "rewardPD" : "1",
+              "successCount" : "3"
+            },
+            "id2" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "4",
+              "desc" : "This merchant is selling items of benevolent properties",
+              "name" : "Traveling Merchant",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "0",
+              "rewardPD" : "4",
+              "successCount" : "4"
+            }
+          },
+          "theme5" : {
+            "id1" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "8",
+              "desc" : "The corruption of this place seeds itself in its denizens",
+              "name" : "Heated Battle",
+              "reward" : "4",
+              "rewardAC" : "5",
+              "rewardIA" : "0",
+              "rewardPD" : "9",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "5",
+              "desc" : "What would normally impede your journey now threatens it with the sickly nature of this land",
+              "name" : "Natural Hazard",
+              "reward" : "4",
+              "rewardAC" : "4",
+              "rewardIA" : "0",
+              "rewardPD" : "1",
+              "successCount" : "5"
+            }
+          }
+        },
+        "biome3" : {
+          "theme0" : {
+            "id1" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "7",
+              "desc" : "A practitioner of strange power",
+              "name" : "Deep Arcanist",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id2" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "7",
+              "desc" : "A creature only in fables, now threatens your journey",
+              "name" : "Monstrosity",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id3" : {
+              "challengeLevelAC" : "7",
+              "challengeLevelIA" : "3",
+              "challengeLevelPD" : "5",
+              "desc" : "One of you catches a terrible illness, made worse by the disgusting features of this land",
+              "name" : "Infection",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "2",
+              "rewardPD" : "2",
+              "successCount" : "4"
+            },
+            "id4" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "4",
+              "desc" : "An old guardian. What is it protecting?",
+              "name" : "Guardian",
+              "reward" : "1",
+              "rewardAC" : "1",
+              "rewardIA" : "0",
+              "rewardPD" : "3",
+              "successCount" : "4"
+            }
+          },
+          "theme1" : {
+            "id1" : {
+              "challengeLevelAC" : "3",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "8",
+              "desc" : "A creature shambling towards you, made of all the lush vegetation",
+              "name" : "Monstrosity",
+              "reward" : "2",
+              "rewardAC" : "3",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id2" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "3",
+              "challengeLevelPD" : "5",
+              "desc" : "A creature's bite leaves infection that is difficult to fight off",
+              "name" : "Infection",
+              "reward" : "2",
+              "rewardAC" : "0",
+              "rewardIA" : "4",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme2" : {
+            "id1" : {
+              "challengeLevelAC" : "3",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "5",
+              "desc" : "An practitioner of old power, too, must eat",
+              "name" : "Deep Arcanist",
+              "reward" : "3",
+              "rewardAC" : "3",
+              "rewardIA" : "0",
+              "rewardPD" : "2",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "7",
+              "desc" : "This creature of old fables has become desperate in its near-extinction",
+              "name" : "Monstrosity",
+              "reward" : "3",
+              "rewardAC" : "3",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            }
+          },
+          "theme3" : {
+            "id1" : {
+              "challengeLevelAC" : "7",
+              "challengeLevelIA" : "3",
+              "challengeLevelPD" : "6",
+              "desc" : "Over-population makes infection spread quickly",
+              "name" : "Infection",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "5",
+              "rewardPD" : "0",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "4",
+              "desc" : "A guardian of the civilization has turned against its people",
+              "name" : "Guardian",
+              "reward" : "3",
+              "rewardAC" : "1",
+              "rewardIA" : "1",
+              "rewardPD" : "2",
+              "successCount" : "4"
+            }
+          },
+          "theme4" : {
+            "id1" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "4",
+              "desc" : "This practitioner of the ancient ways could help, if persuaded",
+              "name" : "Deep Arcanist",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "2",
+              "rewardPD" : "3",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "4",
+              "desc" : "This creature guards an old relic",
+              "name" : "Guardian",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "0",
+              "rewardPD" : "4",
+              "successCount" : "4"
+            }
+          },
+          "theme5" : {
+            "id1" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "8",
+              "desc" : "This arcanist, once enlightened, has now been corrupted by this land and will likely not be except except by force",
+              "name" : "Deep Arcanist",
+              "reward" : "4",
+              "rewardAC" : "3",
+              "rewardIA" : "1",
+              "rewardPD" : "1",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "8",
+              "desc" : "This creature is incomprehensible, as it attacks with immense speed, enhanced by its corruption",
+              "name" : "Monstrosity",
+              "reward" : "4",
+              "rewardAC" : "4",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          }
+        },
+        "biome4" : {
+          "theme0" : {
+            "id1" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "2",
+              "desc" : "You try your best to navigate this challenge, but you find peace and understanding to be your sharpest tool",
+              "name" : "Trial of Peace",
+              "reward" : "1",
+              "rewardAC" : "9",
+              "rewardIA" : "9",
+              "rewardPD" : "3",
+              "successCount" : "3"
+            },
+            "id2" : {
+              "challengeLevelAC" : "2",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "8",
+              "desc" : "You try your best to navigate this challenge, but you have no time to think or even breathe, as you fight through it with all your strength",
+              "name" : "Trial of Strength",
+              "reward" : "1",
+              "rewardAC" : "3",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id3" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "2",
+              "challengeLevelPD" : "8",
+              "desc" : "You try your best to navigate this challenge, but you soon realize this is no natural hazard, but a puzzle!",
+              "name" : "Trial of Mind",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id4" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "6",
+              "desc" : "Rock slides, avalanches, and other challenges impede your journey",
+              "name" : "Natural Hazard",
+              "reward" : "1",
+              "rewardAC" : "4",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme1" : {
+            "id1" : {
+              "challengeLevelAC" : "2",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "8",
+              "desc" : "You try your best to navigate this challenge, but you have no time to think or even breathe, as you fight through it with all your strength",
+              "name" : "Trial of Strength",
+              "reward" : "2",
+              "rewardAC" : "3",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id2" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "5",
+              "desc" : "Rock slides, avalanches, wildlife, and other challenges impede your journey",
+              "name" : "Natural Hazard",
+              "reward" : "2",
+              "rewardAC" : "4",
+              "rewardIA" : "1",
+              "rewardPD" : "0",
+              "successCount" : "5"
+            }
+          },
+          "theme2" : {
+            "id1" : {
+              "challengeLevelAC" : "2",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "8",
+              "desc" : "You try your best to navigate this challenge, but you have no time to think or even breathe, as you fight through it with all your strength",
+              "name" : "Trial of Strength",
+              "reward" : "3",
+              "rewardAC" : "4",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "2",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "8",
+              "desc" : "You try your best to navigate this challenge, but you soon realize this is no natural hazard, but a puzzle!",
+              "name" : "Trial of Mind",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "4",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme3" : {
+            "id1" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "2",
+              "desc" : "You try your best to navigate this challenge, but you find peace and understanding to be your sharpest tool",
+              "name" : "Trial of Peace",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "0",
+              "rewardPD" : "4",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "2",
+              "challengeLevelPD" : "8",
+              "desc" : "You try your best to navigate this challenge, but you soon realize this is no natural hazard, but a puzzle!",
+              "name" : "Trial of Mind",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "4",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme4" : {
+            "id1" : {
+              "challengeLevelAC" : "2",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "8",
+              "desc" : "You try your best to navigate this challenge, but you have no time to think or even breathe, as you fight through it with all your strength",
+              "name" : "Trial of Strength",
+              "reward" : "4",
+              "rewardAC" : "5",
+              "rewardIA" : "0",
+              "rewardPD" : "0",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "2",
+              "desc" : "You try your best to navigate this challenge, but you find peace and understanding to be your sharpest tool",
+              "name" : "Trial of Peace",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "0",
+              "rewardPD" : "5",
+              "successCount" : "5"
+            }
+          },
+          "theme5" : {
+            "id1" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "2",
+              "desc" : "You try your best to navigate this challenge, but you find peace and understanding to be your sharpest tool",
+              "name" : "Trial of Peace",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "0",
+              "rewardPD" : "5",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "8",
+              "challengeLevelPD" : "2",
+              "desc" : "You try your best to navigate this challenge, but you soon realize this is no natural hazard, but a puzzle!",
+              "name" : "Trial of Peace",
+              "reward" : "4",
+              "rewardAC" : "9",
+              "rewardIA" : "9",
+              "rewardPD" : "5",
+              "successCount" : "5"
+            }
+          }
+        },
+        "biome5" : {
+          "theme0" : {
+            "id1" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "6",
+              "desc" : "In old ruins, you search for a few resources you may need",
+              "name" : "Scavenging",
+              "reward" : "1",
+              "rewardAC" : "0",
+              "rewardIA" : "4",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            },
+            "id2" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "6",
+              "desc" : "In this barren environment, you must take food whenever given the opportunity",
+              "name" : "Hunting",
+              "reward" : "1",
+              "rewardAC" : "3",
+              "rewardIA" : "1",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            },
+            "id3" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "7",
+              "desc" : "Great ruins may yield a powerful artifact, but there are many dangers along the way...",
+              "name" : "Lost Ruins",
+              "reward" : "1",
+              "rewardAC" : "1",
+              "rewardIA" : "2",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id4" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "6",
+              "desc" : "Natural hazards make this rough land even more deadly",
+              "name" : "Natural Hazard",
+              "reward" : "1",
+              "rewardAC" : "3",
+              "rewardIA" : "1",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme1" : {
+            "id1" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "7",
+              "desc" : "In old ruins, you search for a few resources you may need, within the overgrown mess",
+              "name" : "Scavenging",
+              "reward" : "2",
+              "rewardAC" : "0",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id2" : {
+              "challengeLevelAC" : "3",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "7",
+              "desc" : "In this strange oasis, you take an opportunity to hunt for some food",
+              "name" : "Hunting",
+              "reward" : "2",
+              "rewardAC" : "2",
+              "rewardIA" : "0",
+              "rewardPD" : "1",
+              "successCount" : "3"
+            }
+          },
+          "theme2" : {
+            "id1" : {
+              "challengeLevelAC" : "6",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "7",
+              "desc" : "Great ruins may yield a powerful artifact, but there are many dangers along the way...",
+              "name" : "Lost Ruins",
+              "reward" : "3",
+              "rewardAC" : "1",
+              "rewardIA" : "2",
+              "rewardPD" : "0",
+              "successCount" : "3"
+            },
+            "id2" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "7",
+              "desc" : "Weakened by lack of food, you must now survive this natural hazard",
+              "name" : "Natural Hazard",
+              "reward" : "3",
+              "rewardAC" : "3",
+              "rewardIA" : "1",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          },
+          "theme3" : {
+            "id1" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "5",
+              "challengeLevelPD" : "5",
+              "desc" : "In old ruins, you search for a few resources you may need",
+              "name" : "Scavenging",
+              "reward" : "3",
+              "rewardAC" : "0",
+              "rewardIA" : "1",
+              "rewardPD" : "2",
+              "successCount" : "3"
+            },
+            "id2" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "5",
+              "desc" : "Great ruins may yield a powerful artifact, but there are many dangers along the way...",
+              "name" : "Lost Ruins",
+              "reward" : "3",
+              "rewardAC" : "2",
+              "rewardIA" : "0",
+              "rewardPD" : "2",
+              "successCount" : "4"
+            }
+          },
+          "theme4" : {
+            "id1" : {
+              "challengeLevelAC" : "8",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "6",
+              "desc" : "In old ruins of an ancient society, you search for a few resources you may need",
+              "name" : "Scavenging",
+              "reward" : "4",
+              "rewardAC" : "0",
+              "rewardIA" : "5",
+              "rewardPD" : "0",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "4",
+              "challengeLevelIA" : "6",
+              "challengeLevelPD" : "7",
+              "desc" : "In this barren environment, you must take food whenever given the opportunity, even the most ancient of creatures",
+              "name" : "Hunting",
+              "reward" : "4",
+              "rewardAC" : "2",
+              "rewardIA" : "3",
+              "rewardPD" : "0",
+              "successCount" : "5"
+            }
+          },
+          "theme5" : {
+            "id1" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "4",
+              "challengeLevelPD" : "8",
+              "desc" : "Great ruins may yield a powerful artifact, but there are many dangers of being corrupted along the way...",
+              "name" : "Lost Ruins",
+              "reward" : "4",
+              "rewardAC" : "3",
+              "rewardIA" : "2",
+              "rewardPD" : "0",
+              "successCount" : "5"
+            },
+            "id2" : {
+              "challengeLevelAC" : "5",
+              "challengeLevelIA" : "7",
+              "challengeLevelPD" : "8",
+              "desc" : "Natural hazards make this corrupted and rough land even more deadly\n",
+              "name" : "Natural Hazard",
+              "reward" : "4",
+              "rewardAC" : "3",
+              "rewardIA" : "1",
+              "rewardPD" : "0",
+              "successCount" : "4"
+            }
+          }
+        }
+      },
+      "themes" : {
+        "theme1" : "Biodiverse",
+        "theme2" : "Starved",
+        "theme3" : "Civilized",
+        "theme4" : "Blessed",
+        "theme5" : "Corrupt"
+      }
+    }
+  },
+  "users" : {
+    
+  }
+}
