@@ -83,6 +83,10 @@ tempButton = document.getElementById("btnGameMenuEncounterSheetFailure");
 tempButton.onclick = btnGameMenuEncounterSheetFailure_Click;
 tempButton = document.getElementById("btnGameMenuScenePageContinue");
 tempButton.onclick = btnGameMenuScenePageContinue_Click;
+tempButton = document.getElementById("btnGameMenuStatusIncMistakes");
+tempButton.onclick = btnGameMenuStatusIncMistakes_Click;
+tempButton = document.getElementById("btnGameMenuStatusDecMistakes");
+tempButton.onclick = btnGameMenuStatusDecMistakes_Click;
 
 tempButton = document.getElementById("btnT1L1O1");
 tempButton.onclick = btnT1L1O1_Click;
@@ -3457,5 +3461,29 @@ function btnGameMenuScenePageContinue_Click()
   }
   var updates = {};
   updates["games/" + globalPlayingGame + "/state"] = 0;
+  firebase.database().ref().update(updates);
+}
+
+function btnGameMenuStatusIncMistakes_Click()
+{
+  if (globalPlayerNum != 1)
+  {
+    return;
+  }
+  var updates = {};
+  updates["games/" + globalPlayingGame + "/mistakePoints"] = Number(globalPlayingGameObject.mistakePoints) + 1;
+
+  firebase.database().ref().update(updates);
+}
+
+function btnGameMenuStatusDecMistakes_Click()
+{
+  if (globalPlayerNum != 1)
+  {
+    return;
+  }
+  var updates = {};
+  updates["games/" + globalPlayingGame + "/mistakePoints"] = Number(globalPlayingGameObject.mistakePoints) - 1;
+
   firebase.database().ref().update(updates);
 }
