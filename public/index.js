@@ -3459,7 +3459,166 @@ function btnGameMenuScenePageContinue_Click()
   {
     return;
   }
+
   var updates = {};
+  var newMistakeCount = 0;
+  try
+  {
+    var player1ExpCount = 0;
+    var p1PDWound1 = Number(globalPlayingGameObject.player1char.woundPD1); if (p1PDWound1 >= 4) {newMistakeCount += 1; p1PDWound1 = 0; updates["games/" + globalPlayingGame + "/player1char/woundPD1"] = 0; player1ExpCount += 4;}
+    var p1PDWound2 = Number(globalPlayingGameObject.player1char.woundPD2); if (p1PDWound2 >= 4) {newMistakeCount += 1; p1PDWound2 = 0; updates["games/" + globalPlayingGame + "/player1char/woundPD2"] = 0; player1ExpCount += 4;}
+    var p1PDWound3 = Number(globalPlayingGameObject.player1char.woundPD3); if (p1PDWound3 >= 4) {newMistakeCount += 1; p1PDWound3 = 0; updates["games/" + globalPlayingGame + "/player1char/woundPD3"] = 0; player1ExpCount += 4;}
+
+    var p1ACWound1 = Number(globalPlayingGameObject.player1char.woundAC1); if (p1ACWound1 >= 4) {newMistakeCount += 1; p1ACWound1 = 0; updates["games/" + globalPlayingGame + "/player1char/woundAC1"] = 0; player1ExpCount += 4;}
+    var p1ACWound2 = Number(globalPlayingGameObject.player1char.woundAC2); if (p1ACWound2 >= 4) {newMistakeCount += 1; p1ACWound2 = 0; updates["games/" + globalPlayingGame + "/player1char/woundAC2"] = 0; player1ExpCount += 4;}
+    var p1ACWound3 = Number(globalPlayingGameObject.player1char.woundAC3); if (p1ACWound3 >= 4) {newMistakeCount += 1; p1ACWound3 = 0; updates["games/" + globalPlayingGame + "/player1char/woundAC3"] = 0; player1ExpCount += 4;}
+
+    var p1IAWound1 = Number(globalPlayingGameObject.player1char.woundIA1); if (p1IAWound1 >= 4) {newMistakeCount += 1; p1IAWound1 = 0; updates["games/" + globalPlayingGame + "/player1char/woundIA1"] = 0; player1ExpCount += 4;}
+    var p1IAWound2 = Number(globalPlayingGameObject.player1char.woundIA2); if (p1IAWound2 >= 4) {newMistakeCount += 1; p1IAWound2 = 0; updates["games/" + globalPlayingGame + "/player1char/woundIA2"] = 0; player1ExpCount += 4;}
+    var p1IAWound3 = Number(globalPlayingGameObject.player1char.woundIA3); if (p1IAWound3 >= 4) {newMistakeCount += 1; p1IAWound3 = 0; updates["games/" + globalPlayingGame + "/player1char/woundIA3"] = 0; player1ExpCount += 4;}
+
+    if (player1ExpCount > 0) {updates["games/" + globalPlayingGame + "/player1char/experience"] = Number(globalPlayingGameObject.player1char.experience) + player1ExpCount;}
+
+    if (p1PDWound1 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundPD1"] = p1PDWound1+1;}
+    if (p1PDWound2 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundPD2"] = p1PDWound2+1;}
+    if (p1PDWound3 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundPD3"] = p1PDWound3+1;}
+
+    if (p1ACWound1 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundAC1"] = p1ACWound1+1;}
+    if (p1ACWound2 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundAC2"] = p1ACWound2+1;}
+    if (p1ACWound3 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundAC3"] = p1ACWound3+1;}
+
+    if (p1IAWound1 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundIA1"] = p1IAWound1+1;}
+    if (p1IAWound2 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundIA2"] = p1IAWound2+1;}
+    if (p1IAWound3 > 0) {updates["games/" + globalPlayingGame + "/player1char/woundIA3"] = p1IAWound3+1;}
+  }
+  catch{}
+
+  try
+  {
+    var player2ExpCount = 0;
+    var p2PDWound1 = Number(globalPlayingGameObject.player2char.woundPD1); if (p2PDWound1 >= 4) {newMistakeCount += 1; p2PDWound1 = 0; updates["games/" + globalPlayingGame + "/player2char/woundPD1"] = 0; player2ExpCount += 4;}
+    var p2PDWound2 = Number(globalPlayingGameObject.player2char.woundPD2); if (p2PDWound2 >= 4) {newMistakeCount += 1; p2PDWound2 = 0; updates["games/" + globalPlayingGame + "/player2char/woundPD2"] = 0; player2ExpCount += 4;}
+    var p2PDWound3 = Number(globalPlayingGameObject.player2char.woundPD3); if (p2PDWound3 >= 4) {newMistakeCount += 1; p2PDWound3 = 0; updates["games/" + globalPlayingGame + "/player2char/woundPD3"] = 0; player2ExpCount += 4;}
+
+    var p2ACWound1 = Number(globalPlayingGameObject.player2char.woundAC1); if (p2ACWound1 >= 4) {newMistakeCount += 1; p2ACWound1 = 0; updates["games/" + globalPlayingGame + "/player2char/woundAC1"] = 0; player2ExpCount += 4;}
+    var p2ACWound2 = Number(globalPlayingGameObject.player2char.woundAC2); if (p2ACWound2 >= 4) {newMistakeCount += 1; p2ACWound2 = 0; updates["games/" + globalPlayingGame + "/player2char/woundAC2"] = 0; player2ExpCount += 4;}
+    var p2ACWound3 = Number(globalPlayingGameObject.player2char.woundAC3); if (p2ACWound3 >= 4) {newMistakeCount += 1; p2ACWound3 = 0; updates["games/" + globalPlayingGame + "/player2char/woundAC3"] = 0; player2ExpCount += 4;}
+
+    var p2IAWound1 = Number(globalPlayingGameObject.player2char.woundIA1); if (p2IAWound1 >= 4) {newMistakeCount += 1; p2IAWound1 = 0; updates["games/" + globalPlayingGame + "/player2char/woundIA1"] = 0; player2ExpCount += 4;}
+    var p2IAWound2 = Number(globalPlayingGameObject.player2char.woundIA2); if (p2IAWound2 >= 4) {newMistakeCount += 1; p2IAWound2 = 0; updates["games/" + globalPlayingGame + "/player2char/woundIA2"] = 0; player2ExpCount += 4;}
+    var p2IAWound3 = Number(globalPlayingGameObject.player2char.woundIA3); if (p2IAWound3 >= 4) {newMistakeCount += 1; p2IAWound3 = 0; updates["games/" + globalPlayingGame + "/player2char/woundIA3"] = 0; player2ExpCount += 4;}
+
+    if (player2ExpCount > 0) {updates["games/" + globalPlayingGame + "/player2char/experience"] = Number(globalPlayingGameObject.player2char.experience) + player2ExpCount;}
+
+    if (p2PDWound1 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundPD1"] = p2PDWound1+1;}
+    if (p2PDWound2 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundPD2"] = p2PDWound2+1;}
+    if (p2PDWound3 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundPD3"] = p2PDWound3+1;}
+
+    if (p2ACWound1 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundAC1"] = p2ACWound1+1;}
+    if (p2ACWound2 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundAC2"] = p2ACWound2+1;}
+    if (p2ACWound3 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundAC3"] = p2ACWound3+1;}
+
+    if (p2IAWound1 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundIA1"] = p2IAWound1+1;}
+    if (p2IAWound2 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundIA2"] = p2IAWound2+1;}
+    if (p2IAWound3 > 0) {updates["games/" + globalPlayingGame + "/player2char/woundIA3"] = p2IAWound3+1;}
+  }
+  catch{}
+
+  try
+  {
+    var player3ExpCount = 0;
+    var p3PDWound1 = Number(globalPlayingGameObject.player3char.woundPD1); if (p3PDWound1 >= 4) {newMistakeCount += 1; p3PDWound1 = 0; updates["games/" + globalPlayingGame + "/player3char/woundPD1"] = 0; player3ExpCount += 4;}
+    var p3PDWound2 = Number(globalPlayingGameObject.player3char.woundPD2); if (p3PDWound2 >= 4) {newMistakeCount += 1; p3PDWound2 = 0; updates["games/" + globalPlayingGame + "/player3char/woundPD2"] = 0; player3ExpCount += 4;}
+    var p3PDWound3 = Number(globalPlayingGameObject.player3char.woundPD3); if (p3PDWound3 >= 4) {newMistakeCount += 1; p3PDWound3 = 0; updates["games/" + globalPlayingGame + "/player3char/woundPD3"] = 0; player3ExpCount += 4;}
+
+    var p3ACWound1 = Number(globalPlayingGameObject.player3char.woundAC1); if (p3ACWound1 >= 4) {newMistakeCount += 1; p3ACWound1 = 0; updates["games/" + globalPlayingGame + "/player3char/woundAC1"] = 0; player3ExpCount += 4;}
+    var p3ACWound2 = Number(globalPlayingGameObject.player3char.woundAC2); if (p3ACWound2 >= 4) {newMistakeCount += 1; p3ACWound2 = 0; updates["games/" + globalPlayingGame + "/player3char/woundAC2"] = 0; player3ExpCount += 4;}
+    var p3ACWound3 = Number(globalPlayingGameObject.player3char.woundAC3); if (p3ACWound3 >= 4) {newMistakeCount += 1; p3ACWound3 = 0; updates["games/" + globalPlayingGame + "/player3char/woundAC3"] = 0; player3ExpCount += 4;}
+
+    var p3IAWound1 = Number(globalPlayingGameObject.player3char.woundIA1); if (p3IAWound1 >= 4) {newMistakeCount += 1; p3IAWound1 = 0; updates["games/" + globalPlayingGame + "/player3char/woundIA1"] = 0; player3ExpCount += 4;}
+    var p3IAWound2 = Number(globalPlayingGameObject.player3char.woundIA2); if (p3IAWound2 >= 4) {newMistakeCount += 1; p3IAWound2 = 0; updates["games/" + globalPlayingGame + "/player3char/woundIA2"] = 0; player3ExpCount += 4;}
+    var p3IAWound3 = Number(globalPlayingGameObject.player3char.woundIA3); if (p3IAWound3 >= 4) {newMistakeCount += 1; p3IAWound3 = 0; updates["games/" + globalPlayingGame + "/player3char/woundIA3"] = 0; player3ExpCount += 4;}
+
+    if (player3ExpCount > 0) {updates["games/" + globalPlayingGame + "/player3char/experience"] = Number(globalPlayingGameObject.player3char.experience) + player3ExpCount;}
+
+    if (p3PDWound1 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundPD1"] = p3PDWound1+1;}
+    if (p3PDWound2 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundPD2"] = p3PDWound2+1;}
+    if (p3PDWound3 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundPD3"] = p3PDWound3+1;}
+
+    if (p3ACWound1 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundAC1"] = p3ACWound1+1;}
+    if (p3ACWound2 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundAC2"] = p3ACWound2+1;}
+    if (p3ACWound3 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundAC3"] = p3ACWound3+1;}
+
+    if (p3IAWound1 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundIA1"] = p3IAWound1+1;}
+    if (p3IAWound2 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundIA2"] = p3IAWound2+1;}
+    if (p3IAWound3 > 0) {updates["games/" + globalPlayingGame + "/player3char/woundIA3"] = p3IAWound3+1;}
+  }
+  catch{}
+
+  try
+  {
+    var player4ExpCount = 0;
+    var p4PDWound1 = Number(globalPlayingGameObject.player4char.woundPD1); if (p4PDWound1 >= 4) {newMistakeCount += 1; p4PDWound1 = 0; updates["games/" + globalPlayingGame + "/player4char/woundPD1"] = 0; player4ExpCount += 4;}
+    var p4PDWound2 = Number(globalPlayingGameObject.player4char.woundPD2); if (p4PDWound2 >= 4) {newMistakeCount += 1; p4PDWound2 = 0; updates["games/" + globalPlayingGame + "/player4char/woundPD2"] = 0; player4ExpCount += 4;}
+    var p4PDWound3 = Number(globalPlayingGameObject.player4char.woundPD3); if (p4PDWound3 >= 4) {newMistakeCount += 1; p4PDWound3 = 0; updates["games/" + globalPlayingGame + "/player4char/woundPD3"] = 0; player4ExpCount += 4;}
+
+    var p4ACWound1 = Number(globalPlayingGameObject.player4char.woundAC1); if (p4ACWound1 >= 4) {newMistakeCount += 1; p4ACWound1 = 0; updates["games/" + globalPlayingGame + "/player4char/woundAC1"] = 0; player4ExpCount += 4;}
+    var p4ACWound2 = Number(globalPlayingGameObject.player4char.woundAC2); if (p4ACWound2 >= 4) {newMistakeCount += 1; p4ACWound2 = 0; updates["games/" + globalPlayingGame + "/player4char/woundAC2"] = 0; player4ExpCount += 4;}
+    var p4ACWound3 = Number(globalPlayingGameObject.player4char.woundAC3); if (p4ACWound3 >= 4) {newMistakeCount += 1; p4ACWound3 = 0; updates["games/" + globalPlayingGame + "/player4char/woundAC3"] = 0; player4ExpCount += 4;}
+
+    var p4IAWound1 = Number(globalPlayingGameObject.player4char.woundIA1); if (p4IAWound1 >= 4) {newMistakeCount += 1; p4IAWound1 = 0; updates["games/" + globalPlayingGame + "/player4char/woundIA1"] = 0; player4ExpCount += 4;}
+    var p4IAWound2 = Number(globalPlayingGameObject.player4char.woundIA2); if (p4IAWound2 >= 4) {newMistakeCount += 1; p4IAWound2 = 0; updates["games/" + globalPlayingGame + "/player4char/woundIA2"] = 0; player4ExpCount += 4;}
+    var p4IAWound3 = Number(globalPlayingGameObject.player4char.woundIA3); if (p4IAWound3 >= 4) {newMistakeCount += 1; p4IAWound3 = 0; updates["games/" + globalPlayingGame + "/player4char/woundIA3"] = 0; player4ExpCount += 4;}
+
+    if (player4ExpCount > 0) {updates["games/" + globalPlayingGame + "/player4char/experience"] = Number(globalPlayingGameObject.player4char.experience) + player4ExpCount;}
+
+    if (p4PDWound1 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundPD1"] = p4PDWound1+1;}
+    if (p4PDWound2 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundPD2"] = p4PDWound2+1;}
+    if (p4PDWound3 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundPD3"] = p4PDWound3+1;}
+
+    if (p4ACWound1 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundAC1"] = p4ACWound1+1;}
+    if (p4ACWound2 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundAC2"] = p4ACWound2+1;}
+    if (p4ACWound3 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundAC3"] = p4ACWound3+1;}
+
+    if (p4IAWound1 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundIA1"] = p4IAWound1+1;}
+    if (p4IAWound2 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundIA2"] = p4IAWound2+1;}
+    if (p4IAWound3 > 0) {updates["games/" + globalPlayingGame + "/player4char/woundIA3"] = p4IAWound3+1;}
+  }
+  catch{}
+
+  try
+  {
+    var player5ExpCount = 0;
+    var p5PDWound1 = Number(globalPlayingGameObject.player5char.woundPD1); if (p5PDWound1 >= 4) {newMistakeCount += 1; p5PDWound1 = 0; updates["games/" + globalPlayingGame + "/player5char/woundPD1"] = 0; player5ExpCount += 4;}
+    var p5PDWound2 = Number(globalPlayingGameObject.player5char.woundPD2); if (p5PDWound2 >= 4) {newMistakeCount += 1; p5PDWound2 = 0; updates["games/" + globalPlayingGame + "/player5char/woundPD2"] = 0; player5ExpCount += 4;}
+    var p5PDWound3 = Number(globalPlayingGameObject.player5char.woundPD3); if (p5PDWound3 >= 4) {newMistakeCount += 1; p5PDWound3 = 0; updates["games/" + globalPlayingGame + "/player5char/woundPD3"] = 0; player5ExpCount += 4;}
+
+    var p5ACWound1 = Number(globalPlayingGameObject.player5char.woundAC1); if (p5ACWound1 >= 4) {newMistakeCount += 1; p5ACWound1 = 0; updates["games/" + globalPlayingGame + "/player5char/woundAC1"] = 0; player5ExpCount += 4;}
+    var p5ACWound2 = Number(globalPlayingGameObject.player5char.woundAC2); if (p5ACWound2 >= 4) {newMistakeCount += 1; p5ACWound2 = 0; updates["games/" + globalPlayingGame + "/player5char/woundAC2"] = 0; player5ExpCount += 4;}
+    var p5ACWound3 = Number(globalPlayingGameObject.player5char.woundAC3); if (p5ACWound3 >= 4) {newMistakeCount += 1; p5ACWound3 = 0; updates["games/" + globalPlayingGame + "/player5char/woundAC3"] = 0; player5ExpCount += 4;}
+
+    var p5IAWound1 = Number(globalPlayingGameObject.player5char.woundIA1); if (p5IAWound1 >= 4) {newMistakeCount += 1; p5IAWound1 = 0; updates["games/" + globalPlayingGame + "/player5char/woundIA1"] = 0; player5ExpCount += 4;}
+    var p5IAWound2 = Number(globalPlayingGameObject.player5char.woundIA2); if (p5IAWound2 >= 4) {newMistakeCount += 1; p5IAWound2 = 0; updates["games/" + globalPlayingGame + "/player5char/woundIA2"] = 0; player5ExpCount += 4;}
+    var p5IAWound3 = Number(globalPlayingGameObject.player5char.woundIA3); if (p5IAWound3 >= 4) {newMistakeCount += 1; p5IAWound3 = 0; updates["games/" + globalPlayingGame + "/player5char/woundIA3"] = 0; player5ExpCount += 4;}
+
+    if (player5ExpCount > 0) {updates["games/" + globalPlayingGame + "/player5char/experience"] = Number(globalPlayingGameObject.player5char.experience) + player5ExpCount;}
+
+    if (p5PDWound1 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundPD1"] = p5PDWound1+1;}
+    if (p5PDWound2 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundPD2"] = p5PDWound2+1;}
+    if (p5PDWound3 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundPD3"] = p5PDWound3+1;}
+
+    if (p5ACWound1 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundAC1"] = p5ACWound1+1;}
+    if (p5ACWound2 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundAC2"] = p5ACWound2+1;}
+    if (p5ACWound3 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundAC3"] = p5ACWound3+1;}
+
+    if (p5IAWound1 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundIA1"] = p5IAWound1+1;}
+    if (p5IAWound2 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundIA2"] = p5IAWound2+1;}
+    if (p5IAWound3 > 0) {updates["games/" + globalPlayingGame + "/player5char/woundIA3"] = p5IAWound3+1;}
+  }
+  catch{}
+
+  if (newMistakeCount > 0) {updates["games/" + globalPlayingGame + "/mistakePoints"] = globalPlayingGameObject.mistakePoints + newMistakeCount;}
+
   updates["games/" + globalPlayingGame + "/state"] = 0;
   firebase.database().ref().update(updates);
 }
