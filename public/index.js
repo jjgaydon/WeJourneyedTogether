@@ -439,7 +439,7 @@ function loadMyCharacterFromObject()
   {
     document.getElementById("cbxGameMenuMyCharExhausted").checked = true;
   }
-  document.getElementById("lblGameMenuMyCharChildProfVal").value = player.childProfType;
+  document.getElementById("lblGameMenuMyCharChildProfVal").textContent = player.childProfType;
   document.getElementById("nbxGameMenuMyCharChildProfVal").value = player.childProf;
   document.getElementById("lblGameMenuMyCharCarProfVal").value = player.carProfType;
   document.getElementById("nbxGameMenuMyCharCarProfVal").value = player.carProf;
@@ -1875,8 +1875,8 @@ function btnGameMenuMyCharSave_Click()
   var charName = document.getElementById("taGameMenuMyCharName").value;
   var charExp = document.getElementById("nbxGameMenuMyCharExperience").value;
   var charExhausted = document.getElementById("cbxGameMenuMyCharExhausted").checked;
-  var charChildProfType = document.getElementById("slGameMenuMyCharChildProfType").value;
-  var charCarProfType = document.getElementById("slGameMenuMyCharCarProfType").value;
+  //var charChildProfType = document.getElementById("slGameMenuMyCharChildProfType").value;
+  //var charCarProfType = document.getElementById("slGameMenuMyCharCarProfType").value;
   var charChildProf = document.getElementById("nbxGameMenuMyCharChildProfVal").value;
   var charCarProf = document.getElementById("nbxGameMenuMyCharCarProfVal").value;
   var charAbil1 = document.getElementById("slGameMenuMyCharAbil1Aspect").value;
@@ -1960,9 +1960,9 @@ function btnGameMenuMyCharSave_Click()
   updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/name"] = charName;
   updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/experience"] = charExp;
   updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/exhausted"] = charExhausted;
-  updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/childProfType"] = charChildProfType;
+  //updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/childProfType"] = charChildProfType;
   updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/childProf"] = charChildProf;
-  updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/carProfType"] = charCarProfType;
+  //updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/carProfType"] = charCarProfType;
   updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/carProf"] = charCarProf;
   updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/maturityPD"] = charMaturityPD;
   updates["games/" + globalPlayingGame + "/player" + String(globalPlayerNum) + "char" + "/maturityAC"] = charMaturityAC;
