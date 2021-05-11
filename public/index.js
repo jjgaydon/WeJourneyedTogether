@@ -2233,7 +2233,8 @@ function dieRollEventListener(event)
   img = document.getElementById("imgDieResult" + String(result));
   img.style = "display:block";
   console.log("Rolled a " + getAspectAbility(Number(this.value)) + " Aspect check with a result of " + String(result));
-  this.parentNode.removeChild(this);
+  this.parentElement.innerHTML = "<label>Used " + getAspectAbility(Number(this.value)) + "[" + String(this.value) + "]" + " with a result of " + String(result) + "</label>";
+  //this.parentNode.removeChild(this);
 }
 
 function clearDieImages()
@@ -2603,6 +2604,8 @@ function createJourneyMap(module, numPlayers, gameName)
     updates["games/" + gameName + "/journeyMap/t3Loc5Op2/biome"] = t3Loc5Op2Biome;
     updates["games/" + gameName + "/journeyMap/t3Loc5Op1/theme"] = t3Loc5Op1Theme;
     updates["games/" + gameName + "/journeyMap/t3Loc5Op2/theme"] = t3Loc5Op2Theme;
+
+    updates["games/" + gameName + "/journeyMap/currentPlayer"] = "none";
     firebase.database().ref().update(updates);
   });
 }
@@ -2856,6 +2859,7 @@ function btnT1L1O2_Click()
 function loadT1L1(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t1Loc1Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -2889,6 +2893,7 @@ function btnT1L2O2_Click()
 function loadT1L2(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t1Loc2Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -2920,6 +2925,7 @@ function btnT1L3O2_Click()
 function loadT1L3(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t1Loc3Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -2952,6 +2958,7 @@ function btnT1L4O2_Click()
 function loadT1L4(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t1Loc4Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -2984,6 +2991,7 @@ function btnT1L5O2_Click()
 function loadT1L5(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t1Loc5Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3018,6 +3026,7 @@ function btnT2L1O2_Click()
 function loadT2L1(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t2Loc1Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3049,6 +3058,7 @@ function btnT2L2O2_Click()
 function loadT2L2(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t2Loc2Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3080,6 +3090,7 @@ function btnT2L3O2_Click()
 function loadT2L3(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t2Loc3Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3111,6 +3122,7 @@ function btnT2L4O2_Click()
 function loadT2L4(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t2Loc4Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3142,6 +3154,7 @@ function btnT2L5O2_Click()
 function loadT2L5(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t2Loc5Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3176,6 +3189,7 @@ function btnT3L1O2_Click()
 function loadT3L1(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t3Loc1Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3208,6 +3222,7 @@ function btnT3L2O2_Click()
 function loadT3L2(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t3Loc2Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3240,6 +3255,7 @@ function btnT3L3O2_Click()
 function loadT3L3(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t3Loc3Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3272,6 +3288,7 @@ function btnT3L4O2_Click()
 function loadT3L4(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t3Loc4Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3304,6 +3321,7 @@ function btnT3L5O2_Click()
 function loadT3L5(updates, choice)
 {
   updates["games/" + globalPlayingGame + "/journeyMap/t3Loc5Player"] = lookUpUserCharacter(document.getElementById("slGameMenuChoosePlayer").value);
+  updates["games/" + globalPlayingGame + "/journeyMap/currentPlayer"] = document.getElementById("slGameMenuChoosePlayer").value;
   firebase.database().ref().update(updates).then((snapshot) => {
     if (choice == 1)
     {
@@ -3384,31 +3402,32 @@ function btnGameMenuEncounterSheetSuccess_Click()
   updates["games/" + globalPlayingGame + "/state"] = 2;
   updates["games/" + globalPlayingGame + "/activeEncounter"] = null;
   
-  var slPlayer = document.getElementById("slGameMenuEncounterSheetPlayers");
+  //var slPlayer = document.getElementById("slGameMenuEncounterSheetPlayers");
+  var player = globalPlayingGameObject.journeyMap.currentPlayer;
 
-  if (slPlayer.value == globalPlayingGameObject.player1)
+  if (player == globalPlayingGameObject.player1)
   {
     updates["games/" + globalPlayingGame + "/player1char/exhausted"] = true;
     var thing = "5";
     
     updates["games/" + globalPlayingGame + "/player1char/experience"] = Number(globalPlayingGameObject.player1char.experience) + 6;
   } 
-  else if (slPlayer.value == globalPlayingGameObject.player2)
+  else if (player == globalPlayingGameObject.player2)
   {
     updates["games/" + globalPlayingGame + "/player2char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player2char/experience"] = Number(globalPlayingGameObject.player2char.experience) + 6;
   }
-  else if (slPlayer.value == globalPlayingGameObject.player3)
+  else if (player == globalPlayingGameObject.player3)
   {
     updates["games/" + globalPlayingGame + "/player3char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player3char/experience"] = Number(globalPlayingGameObject.player3char.experience) + 6;
   }
-  else if (slPlayer.value == globalPlayingGameObject.player4)
+  else if (player == globalPlayingGameObject.player4)
   {
     updates["games/" + globalPlayingGame + "/player4char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player4char/experience"] = Number(globalPlayingGameObject.player4char.experience) + 6;
   }
-  else if (slPlayer.value == globalPlayingGameObject.player5)
+  else if (player == globalPlayingGameObject.player5)
   {
     updates["games/" + globalPlayingGame + "/player5char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player5char/experience"] = Number(globalPlayingGameObject.player5char.experience) + 6;
@@ -3423,29 +3442,30 @@ function btnGameMenuEncounterSheetFailure_Click()
   updates["games/" + globalPlayingGame + "/state"] = 2;
   updates["games/" + globalPlayingGame + "/activeEncounter"] = null;
   
-  var slPlayer = document.getElementById("slGameMenuEncounterSheetPlayers");
+  //var slPlayer = document.getElementById("slGameMenuEncounterSheetPlayers");
+  var player = globalPlayingGameObject.journeyMap.currentPlayer;
 
-  if (slPlayer.value == globalPlayingGameObject.player1)
+  if (player == globalPlayingGameObject.player1)
   {
     updates["games/" + globalPlayingGame + "/player1char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player1char/experience"] = Number(globalPlayingGameObject.player1char.experience) + 6;
   } 
-  else if (slPlayer.value == globalPlayingGameObject.player2)
+  else if (player == globalPlayingGameObject.player2)
   {
     updates["games/" + globalPlayingGame + "/player2char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player2char/experience"] = Number(globalPlayingGameObject.player2char.experience) + 6;
   }
-  else if (slPlayer.value == globalPlayingGameObject.player3)
+  else if (player == globalPlayingGameObject.player3)
   {
     updates["games/" + globalPlayingGame + "/player3char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player3char/experience"] = Number(globalPlayingGameObject.player3char.experience) + 6;
   }
-  else if (slPlayer.value == globalPlayingGameObject.player4)
+  else if (player == globalPlayingGameObject.player4)
   {
     updates["games/" + globalPlayingGame + "/player4char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player4char/experience"] = Number(globalPlayingGameObject.player4char.experience) + 6;
   }
-  else if (slPlayer.value == globalPlayingGameObject.player5)
+  else if (player == globalPlayingGameObject.player5)
   {
     updates["games/" + globalPlayingGame + "/player5char/exhausted"] = true;
     updates["games/" + globalPlayingGame + "/player5char/experience"] = Number(globalPlayingGameObject.player5char.experience) + 6;
