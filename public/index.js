@@ -87,6 +87,10 @@ tempButton = document.getElementById("btnGameMenuStatusIncMistakes");
 tempButton.onclick = btnGameMenuStatusIncMistakes_Click;
 tempButton = document.getElementById("btnGameMenuStatusDecMistakes");
 tempButton.onclick = btnGameMenuStatusDecMistakes_Click;
+tempButton = document.getElementById("btnMainMenuRulebook");
+tempButton.onclick = btnMainMenuRulebook_Click;
+tempButton = document.getElementById("btnMainMenuRulebook2");
+tempButton.onclick = btnMainMenuRulebook_Click;
 
 tempButton = document.getElementById("btnT1L1O1");
 tempButton.onclick = btnT1L1O1_Click;
@@ -3665,4 +3669,9 @@ function btnGameMenuStatusDecMistakes_Click()
   updates["games/" + globalPlayingGame + "/mistakePoints"] = Number(globalPlayingGameObject.mistakePoints) - 1;
 
   firebase.database().ref().update(updates);
+}
+
+function btnMainMenuRulebook_Click()
+{
+  window.location.href = "https://we-journeyed-together.web.app/rules.html";
 }

@@ -18,6 +18,8 @@ tempButton.onclick = btnMainMenuSection35_Click;
 
 tempButton = document.getElementById("btnReturn");
 tempButton.onclick = btnReturn_Click;
+tempButton = document.getElementById("btnHome");
+tempButton.onclick = btnHome_Click;
 
 function btnMainMenuSection1_Click()
 {
@@ -80,4 +82,9 @@ function btnReturn_Click()
   document.getElementById("divSection34").style = "display:none";
   document.getElementById("divSection35").style = "display:none";
   document.getElementById("divButtonReturn").style = "display:none";
+}
+
+function btnHome_Click()
+{
+  window.location.href = "https://we-journeyed-together.web.app";
 }
