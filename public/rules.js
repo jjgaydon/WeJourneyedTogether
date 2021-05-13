@@ -1,3 +1,5 @@
+// Citation https://support.google.com/youtube/answer/171780?hl=en
+
 var tempButton = document.getElementById("btnMainMenuSection1");
 tempButton.onclick = btnMainMenuSection1_Click;
 tempButton = document.getElementById("btnMainMenuSection2");
