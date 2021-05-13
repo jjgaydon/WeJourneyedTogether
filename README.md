@@ -29,3 +29,5 @@ Citations
 - Citation https://www.w3schools.com/jsref/met_table_insertrow.asp inserting rows in tables
 
 - Citation https://stackoverflow.com/questions/28114916/how-to-access-a-button-in-a-table-via-the-cell-index/28115091 accessing a button using the index of a cell in a table
+
+- Citation https://support.google.com/youtube/answer/171780?hl=en Embedding YouTube videos in HTML
