@@ -1,4 +1,5 @@
 // Citation https://support.google.com/youtube/answer/171780?hl=en
+// Citation https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
 
 var tempButton = document.getElementById("btnMainMenuSection1");
 tempButton.onclick = btnMainMenuSection1_Click;
