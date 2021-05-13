@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>We Journeyed Together</title>
+    
+  </head>
+  <body>
+    <div>
+      <h1>We Journeyed Together - Rules</h1>
+    </div>
+    
+    <script src="/__/firebase/8.2.9/firebase-app.js"></script>
+    <script src="/__/firebase/8.2.9/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    
+    <script src="/__/firebase/init.js"></script>
+
+    <div id="divButtonReturn" class="div-main" style="display:none;">
+      <input id="btnReturn" type="button" class="btn btn-secondary" value="Return" />
+    </div>
+
+    <div id="divMainMenu" class="div-main">
+      <p>
+        Please select your topics of interest. If you are unsure, follow the instructions in numerical order.
+      </p>
+      
+      <table>
+        <tr>
+          <td>
+            <label style="font-weight:bolder;">Section</label>
+          </td>
+          <td>
+            <label style="font-weight:bolder;">Title</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>1</label>
+          </td>
+          <td>
+            <input id="btnMainMenuSection1" type="button" class="btn btn-secondary" value="Creating a Game" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>2</label>
+          </td>
+          <td>
+            <input id="btnMainMenuSection2" type="button" class="btn btn-secondary" value="Character Sheets" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>3.1</label>
+          </td>
+          <td>
+            <input id="btnMainMenuSection31" type="button" class="btn btn-secondary" value="Playing the Game: Locations and Encounters" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>3.2</label>
+          </td>
+          <td>
+            <input id="btnMainMenuSection32" type="button" class="btn btn-secondary" value="Playing the Game: Scenes" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>3.3</label>
+          </td>
+          <td>
+            <input id="btnMainMenuSection33" type="button" class="btn btn-secondary" value="Playing the Game: Wounds" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>3.4</label>
+          </td>
+          <td>
+            <input id="btnMainMenuSection34" type="button" class="btn btn-secondary" value="Playing the Game: End-of-Tier and Deep Secrets" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>3.5</label>
+          </td>
+          <td>
+            <input id="btnMainMenuSection35" type="button" class="btn btn-secondary" value="Playing the Game: The Final Confrontation" />
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="divSection1" class="div-main" style="display:none">
+
+      <br />
+      <label style="font-weight: bolder;">Creating a Game</label>
+      <br />
+      <p>Hello and welcome to We Journeyed Together, a one-shot tabletop role-playing game built to be played online from the ground up.</p>
+      <p>Today, we will be discussing how to create a game using the companion web application.</p>
+      <p>First, navigate to the website. Then, sign in with your google account.</p>
+      <p>Next, click “Create New Game” in the My Hosted Games section of the menu.</p>
+      <p>Give that game a unique name using alphanumeric characters.</p>
+      <p>Select the number of players you will be playing with. Keep in mind that this player count includes yourself. It cannot be changed later.</p>
+      <p>Select the module you will be using. The only module available at this time is Fantasy. Then, click next.</p>
+      <p>Put in the google email accounts of all the players in your game. At this time, this cannot be changed later.</p>
+      <p>Now, you will need to talk with your players about the story you are about to tell as a group. Decide what the Nemesis will be. Will it be a dark lord attempting to crush a rebellion? Will it be a doomsday event that the characters have to race to stop? </p>
+      <p>Enter the name of your nemesis and a brief description.</p>
+      <p>Click Create Game!</p>
+      <p>This will take you back to the main menu. At this point, you and the players you invited may join the game. </p>
+      <p>Players you invited will need to join the game by using the textbox in the My Other Games section to input the unique game name you assigned previously. Then, they will click Join Game.</p>
+      <p>When either the host or a player tries to join your game, if they have not made a character yet, the system will prompt them to do that first. Creating characters will be covered in the next video. For now, all you need to know is that the character will need to be created before that particular player may log into the game and play.</p>
+      <p>As the host of this game, you alone will have the authority to progress the story of the game and load encounters. Please ensure that whoever is the host of the game you are about to play is willing to be the one to take that responsibility.</p>
+    </div>
+
+    <div id="divSection2" class="div-main" style="display:none">
+      <br />
+      <label style="font-weight: bolder;">Character Sheets</label>
+      <br />
+      <p>Today, we will be investigating the character sheet and its attributes.</p>
+      <p>When you first attempt to join a game you are hosting or were invited to, you will be prompted to create a character.</p>
+      <p>First we have the name. This can be changed later if desired, and is the name that your character goes by.</p>
+      <p>Next, we have childhood proficiency. This corresponds to one of the five biomes in the game, and will provide a bonus to any aspect checks made in a location that matches the biome listed in this proficiency. In the context of your story, this should reflect the kind of terrain your character grew up in and around. Did your character grow up in the woods? Up in the mountains? This cannot be changed later.</p>
+      <p>Here we have Career proficiency. This corresponds to one of the five themes in the game, and will provide a bonus to any aspect checks made in a location that matches the theme listed in this proficiency. In the context of your story, this should reflect what your character studied by choice. Did your character learn to forage in starved environments? Did they study different forms of life with biodiversity. This cannot be changed later.</p>
+      <p>Now, we have the aspect abilities. Each one of these corresponds to a number of an eight-sided die, or a d8. If you hover your mouse over the text, it will tell you the effect. For more information regarding the aspect abilities and how they work in the encounter system, please see part 3.1: choosing a location and resolving an encounter.</p>
+      <p>For each aspect ability, choose one of the three aspects: Peace and Diplomacy or P&D for short, Aggression and Coordination or A&C for short, or Investigation and Analysis or I&A for short. When you roll your Action Hand, these will control which kinds of aspect checks you can make.</p>
+      <p>This cannot be changed later. It is recommended that you have at least one of each aspect.</p>
+      <p>Finally, we have the Deep Secret. The Deep Secret can be changed later, until a certain point when you will reveal it. The Deep Secret is something you keep to yourself, at least in the beginning, that ties your character to the nemesis. </p>
+      <p>If the nemesis was a Dark Lord, perhaps they killed your character’s parents. Perhaps your character used to work for the nemesis, or caused it to come to power. Ultimately, it is up to you and should be based on the story you and your fellow players came up with when deciding what the nemesis was.</p>
+      <p>These are the parts of your character that you choose during creation. There is more to your character that we will see once the game begins.</p>
+      <p>Here is the character sheet in the game.</p>
+      <p>There are a few new fields.</p>
+      <p>Up here we have the experience points. This is how to keep track of the main form of progression in the game. Experience points will be used to do many things such as increase proficiency values or even heal wounds.</p>
+      <p>Below we have the exhausted condition. When checked, it means that your character was the main character for a scene and won’t be cleared until the current tier of locations is completed. </p>
+      <p>Next we have the childhood proficiency value. During creation you chose the *type*. Now, you have a value associated with it. When resolving an encounter with a biome of this kind, you gain a bonus to all aspect checks equal to the value. This may be increased at the end of each location tier.</p>
+      <p>Below is the career proficiency, and the same rules apply except that it applies to the theme, not the biome. It will also cost more experience to increase, but unlike the child proficiency, you gain the career proficiency during the final confrontation.</p>
+      <p>We now see that the aspect abilities table has an active column. This depicts if, in the current encounter, you have activated any aspect abilities. Please note that this is client-side and will not be saved if you relaunch the game.</p>
+      <p>Next we have the aspect maturity. This starts at one for all aspects, and will increase as the game progresses. Mechanically, they do nothing until the final confrontation. In general, you will want to improve the aspect maturity of the aspect that appears most in your aspect ability mappings.</p>
+      <p>Down here we have the Wounds table. Each aspect can have up to three wounds, which are acquired when failing an aspect check by rolling a “1” on the d8. They start at a value of 1 and will automatically increase at the end of every scene. If they would increase past a value of 5, the party gains a mistake point instead and it goes away. They can be removed at the end of a scene by spending experience points.</p>
+      <p>Finally, we have the save changes button, which will update all information to the server-side.</p>
+      <p>That is all for the character! It is certainly the most involved part of this game, but is one of the most important parts. In the next part, we will talk about resolving encounters.</p>
+    </div>
+
+    <div id="divSection31" class="div-main" style="display:none">
+      
+    </div>
+
+    <div id="divSection32" class="div-main" style="display:none">
+      
+    </div>
+
+    <div id="divSection33" class="div-main" style="display:none">
+      
+    </div>
+
+    <div id="divSection34" class="div-main" style="display:none">
+      
+    </div>
+
+    <div id="divSection35" class="div-main" style="display:none">
+      
+    </div>
+
+    <script src="rules.js"></script>
+  </body>
+</html>
