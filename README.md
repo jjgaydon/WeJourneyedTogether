@@ -33,3 +33,5 @@ Citations
 - Citation https://support.google.com/youtube/answer/171780?hl=en Embedding YouTube videos in HTML
 
 - Citation https://www.w3schools.com/howto/howto_js_redirect_webpage.asp Redirecting to other web pages
+
+- Citation https://www.w3schools.com/js/js_random.asp For correct random number generators

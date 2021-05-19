@@ -10,6 +10,7 @@
 // Citation https://www.w3schools.com/html/html_images.asp
 // Citation https://www.w3schools.com/cssref/pr_class_display.asp
 // Citation https://www.w3schools.com/js/js_type_conversion.asp
+// Citation https://www.w3schools.com/js/js_random.asp
 
 /*
 ------FINITE STATE MACHINE------
@@ -2157,7 +2158,7 @@ function insertGameMenuDiceResult(num)
 
 function rolld8()
 {
-  return Math.floor(Math.random() * 10) % 8 + 1;
+  return Math.floor(Math.random() * 8)+1;
 }
 
 function getAspectAbility(num)
