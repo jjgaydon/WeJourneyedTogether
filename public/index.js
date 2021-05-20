@@ -2734,10 +2734,10 @@ function loadNewEncounter(biome, theme)
       var biomeNum = getBiomeNum(biome, moduleObject.biomes);
       var themeNum = getThemeNum(theme, moduleObject.themes);
 
-      var randInt = randomNum(1,2);
+      var randInt = randomNum(1,3);
       var randID = 0;
       console.log(randInt);
-      if (randInt == 1)
+      if (randInt <= 2)
       {
         themeNum = 0;
         randID = randomNum(1,4);
