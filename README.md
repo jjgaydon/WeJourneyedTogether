@@ -35,3 +35,5 @@ Citations
 - Citation https://www.w3schools.com/howto/howto_js_redirect_webpage.asp Redirecting to other web pages
 
 - Citation https://www.w3schools.com/js/js_random.asp For correct random number generators
+
+- Citation https://getbootstrap.com/ I used Bootstrap for the web control CSS styles
